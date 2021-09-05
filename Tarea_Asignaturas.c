@@ -28,52 +28,54 @@ void printAsignatura(Asignatura *asignatura);
 
 int main()
 {
+    //Se crea la lista ligada Ascendente
     Asignatura *listaMateriasA; //cabeza vacia
 
-    //Primera materia
-
+    //Primera horario
     Asignatura *POO_Dos = createAsignatura();
     char *nombrePOO_Dos = "POO";
     FillAsignatura(POO_Dos, nombrePOO_Dos, 3, 11, 0, 3, 12, 30);
     ASortList(&listaMateriasA, POO_Dos);
-    //printAsignatura(POO_Dos);
 
+    //Segundo horario
     Asignatura *POO_Uno = createAsignatura();
     char *nombrePOO_Uno = "POO";
     FillAsignatura(POO_Uno, nombrePOO_Uno, 2, 10, 30, 2, 12, 0);
     ASortList(&listaMateriasA, POO_Uno);
 
+    //ercer horario
     Asignatura *POO_tres = createAsignatura();
     char *nombrePOO_tres = "POO";
     FillAsignatura(POO_tres, nombrePOO_tres, 5, 12, 0, 5, 1, 30);
-    //printAsignatura(POO_tres);
     ASortList(&listaMateriasA, POO_tres);
 
-    // se manda solo la cabeza
+    //Se imprime la lista Ascendente
     print_ll(listaMateriasA);
 
-    printf("------------------------------------------------------");
+    printf("------------------------------------------------------/n");
 
+    //Se crea la lista ligada descendente
     Asignatura *listaMateriasD;
 
+    //primer horario
     Asignatura *POO_dos_D = createAsignatura();
     char *nombrePOO_dos_D = "POO";
     FillAsignatura(POO_dos_D, nombrePOO_dos_D, 3, 11, 0, 3, 12, 30);
     DSortList(&listaMateriasD, POO_dos_D);
-    //printAsignatura(POO_dos_D);
 
+    //segundo horario
     Asignatura *POO_uno_D = createAsignatura();
     char *nombrePOO_uno_D = "POO";
     FillAsignatura(POO_uno_D, nombrePOO_uno_D, 2, 10, 30, 2, 12, 0);
     DSortList(&listaMateriasD, POO_uno_D);
 
+    //tercer horario
     Asignatura *POO_tres_D = createAsignatura();
     char *nombrePOO_tres_D = "POO";
     FillAsignatura(POO_tres_D, nombrePOO_tres_D, 5, 12, 0, 5, 1, 30);
-    //printAsignatura(POO_tres_D);
     DSortList(&listaMateriasD, POO_tres_D);
 
-    //se manda solo la cabeza
+    //se imprime la lista descendente
     print_ll(listaMateriasD);
 
     return 0;
@@ -125,14 +127,12 @@ void FillAsignatura(Asignatura *newAsignatura, char *nombreAsignatura, int diaEn
 
 void ASortList(Asignatura **head, Asignatura *newAsignatura) //Ascendente
 {
-    //Asignatura *current = head;
     Asignatura *aux;
 
     if ((*head) == NULL)
     {
         (*head) = newAsignatura; //para hacer referencia al primer puntero
         (*head)->next = NULL;
-        printf("tffevg");
     }
     else
     {
@@ -156,7 +156,6 @@ void ASortList(Asignatura **head, Asignatura *newAsignatura) //Ascendente
 
 void DSortList(Asignatura **head, Asignatura *newAsignatura) //Descendente
 {
-    //Asignatura *current = head;
     Asignatura *aux;
 
     if ((*head) == NULL)
@@ -170,7 +169,6 @@ void DSortList(Asignatura **head, Asignatura *newAsignatura) //Descendente
         {
             newAsignatura->next = (*head);
             (*head) = newAsignatura;
-            printf("ggrtgf");
         }
         else
         {
